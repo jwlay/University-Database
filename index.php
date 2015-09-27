@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style media="screen">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<style media="screen">
+		.btn-circle {
+			width: 50px;
+		  height: 50px;
+		  padding: 10px 16px;
+		  font-size: 18px;
+		  line-height: 1.33;
+		  border-radius: 25px;
+			margin-top:40px;
+			margin-left: 10px;
+		}
 	</style>
 </head>
 <body>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/dataTables.bootstrap.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
 <div class="container">
 	<div class="row" style="margin-bottom:20px">
-		<div class="col-md-6 col-md-offset-2">
+		<div class="col-md-2"></div>
+		<div class="col-md-6">
 			<h1 class="text-center">University Search<p>
 					<small>by Jan Wohlfahrt-Laymann</small></h1>
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-1">
+			<button type="button" class="btn btn-primary btn-circle" data-toggle="modal" data-target="#info-modal">
+				<i class="fa fa-info"></i>
+			</button>
 		</div>
 	</div>
 	<div class="row" style="margin-bottom:10px">
@@ -99,6 +116,29 @@
 		</form>
 		</div>
 	</div>
+</div>
+
+<!-- Info Modal -->
+<div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Info</h4>
+      </div>
+      <div class="modal-body">
+				<h2>University Location Comparison DB<p>
+					<small>Cross Cultural and Context Computing - Module 1</small>
+				</h2>
+				<p>Locational Databases allow the comparison of location and the capture of the spatial distance between points.
+				<p>There are many exchange students at the University of Jyväskylä, that might be interested to know the distance between their home University and Jyväskylä and compare the distance they had to travel. Therefore I created a database of Universities and added their coordinates as metadata.
+				<p>By using the Formula to calculate the distance between two points on the earth sphere as a function in PostgreSQL it is possible to order Universities by distance from any given University in the Database.
+				<p>In order to access the Database a small PhP / Html script is written that allows a User to access and use the database and it’s functionality by entering a University in the Search Box, the Query will retrieve the Universities and order them by distance compared to it.
+				<p>The full code can be found on: <a href="https://github.com/jwlay/University-Database">https://github.com/jwlay/University-Database</a>
+
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
